@@ -5,18 +5,14 @@ from KY040 import KY040
 import os, time
 
 
-def readVolume():
-    value = os.popen("amixer get PCM|grep -o [0-9]*%|sed 's/%//'").read()
-    return int(value)
-
+rotation = 0
 
 def rotaryChange(direction):
-    volume_step = 5
-    volume = readVolume()
+    step = 5
     if direction == 1:
-        os.system("sudo amixer set PCM -- " + str(min(100, max(0, volume + volume_step))) + "%")
+        print(rotation + step)
     else:
-        os.system("sudo amixer set PCM -- " + str(min(100, max(0, volume - volume_step))) + "%")
+        print(rotation - step)
 
 
 def switchPressed():
