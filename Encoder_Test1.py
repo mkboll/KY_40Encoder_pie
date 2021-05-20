@@ -1,3 +1,5 @@
+#https://tutorials-raspberrypi.de/raspberry-pi-ky040-drehregler-lautstaerkeregler/
+
 import RPi.GPIO as GPIO
 from KY040 import KY040
 import os, time
